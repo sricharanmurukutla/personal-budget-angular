@@ -6,7 +6,8 @@ body {
     font-size: 10px;
     font-family: Tahoma, Arial;
 }
-/* Changed to nav  from div for semantic HTML */
+
+/* Changed to nav from div for semantic HTML */
 nav.menu {
     width: 100%;
     background-color: #4d5791;
@@ -15,7 +16,7 @@ nav.menu {
 }
 
 nav.menu ul,
-nav.menu ul li {  /* changed from div to nav */
+nav.menu ul li { /* changed from div to nav */
     margin: 0;
     padding: 0;
     list-style: none;
@@ -37,9 +38,10 @@ nav.menu ul li a:hover {
     color: #4d5791;
 }
 
-header.hero {       /* changed from  Div to header */
+/* Changed from Div to header */
+header.hero {
     height: 350px;
-    background-image: url('bg.png'); 
+    background-image: url('bg.png');
     background-size: 400px;
     background-repeat: no-repeat;
     background-color: #b4c6f0;
@@ -47,87 +49,90 @@ header.hero {       /* changed from  Div to header */
     padding-top: 40px;
 }
 
-
 header.hero h1,
 header.hero h2 { /* changed from div to header */
     text-align: center;
     margin: 0;
 }
+
 header.hero h1 {
     color: #fff;
     font-size: 4.2em;
     margin-bottom: 20px;
 }
+
 header.hero h2 {
-        color: #4d5791;
+    color: #4d5791;
 }
-
-
 
 .container {
     padding: 40px;
     width: 100%;
 }
 
-
 .page-area {
     max-width: none;
     width: 100%;
-  }
+}
+
 footer.bottom {
-    background-color: #000; 
+    background-color: #000;
     color: #fff;
     padding: 20px;
     text-align: center;
 }
 
 footer.bottom .center {
-    font-size: 18px; 
+    font-size: 18px;
 }
 
 footer.bottom .h-card {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
 }
 
 footer.bottom .h-card p {
-    margin: 5px; 
+    margin: 5px;
 }
 
-
 footer.bottom a {
-    color: #fff; 
+    color: #fff;
     text-decoration: none;
 }
 
 footer.bottom a:hover {
-    text-decoration: underline; 
+    text-decoration: underline;
 }
 
 .text-box {
     display: inline-block;
-    width: 45%; 
+    width: 45%;
     vertical-align: top;
-  }
-
+}
 
 a:focus, button:focus {
-    outline: 2px solid #4d5791; 
+    outline: 2px solid #4d5791;
 }
 
 input:focus, textarea:focus, select:focus {
-    outline: 2px solid #4d5791; 
+    outline: 2px solid #4d5791;
 }
 
 @media screen and (min-width: 768px) {
     .container .text-box {
-       
+        /* Add specific styles for larger screens if needed */
     }
 }
 
 #myChart {
     max-width: 400px;
     max-height: 400px;
-  }
+}
+
+.graphs_contianer {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 32px;
+}
