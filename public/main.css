@@ -68,16 +68,12 @@ header.hero h2 {
     padding: 40px;
     width: 100%;
 }
-.text-block {
-    font-size: 18px !important;
-}
+
 
 .page-area {
-    max-width: 768px;
-    display: inline-block;
-    font-size: 1.6em; 
-}
-
+    max-width: none;
+    width: 100%;
+  }
 footer.bottom {
     background-color: #000; 
     color: #fff;
@@ -110,6 +106,12 @@ footer.bottom a:hover {
     text-decoration: underline; 
 }
 
+.text-box {
+    display: inline-block;
+    width: 45%; 
+    vertical-align: top;
+  }
+
 
 a:focus, button:focus {
     outline: 2px solid #4d5791; 
@@ -121,6 +123,11 @@ input:focus, textarea:focus, select:focus {
 
 @media screen and (min-width: 768px) {
     .container .text-box {
-        margin: 10px;
+       
     }
 }
+
+#myChart {
+    max-width: 400px;
+    max-height: 400px;
+  }

@@ -13,8 +13,8 @@
         <!--This is SEO change-3 -->
         <title>Personal Budget Management - Track, Save and Acheive financial Goals</title>
         
-        <link rel="stylesheet" href="/pb/reset.css">
-        <link rel="stylesheet" href="/pb/main.css">
+        <link rel="stylesheet" href="/reset.css">
+        <link rel="stylesheet" href="/main.css">
 </head>
 
 <body>
@@ -26,11 +26,11 @@
             <!-- This is A11y Change1 -->
             <li><a href="#content" tabindex="1">Skip to the Content</a></li>
 
-            <li><a href="/pb" tabindex="2" >Homepage</a></li>
+            <li><a href="/" tabindex="2" >Homepage</a></li>
             
-            <li><a href="/pb/about.html" tabindex="3">About</a></li>
+            <li><a href="/about.html" tabindex="3">About</a></li>
             
-            <li><a href="/pb/login.html" tabindex="4">Login</a></li>
+            <li><a href="/login.html" tabindex="4">Login</a></li>
             <li><a href="https://google.com" tabindex="5" target="blank">Google</a></li>
             
             </ul>
@@ -106,8 +106,10 @@
 
                 <div class="text-box">
                     <h1>Free</h1>
+                    <h4>data json chart</h4>
                     <p>
-                        This app is free!!! And you are the only one holding your data!
+                        <canvas id="myChart" width="400" height="400"></canvas>
+
                     </p>
                 </div>
 
@@ -141,6 +143,72 @@
     <button aria-describedby="info-tooltip">More Info</button>
     <div id="info-tooltip" role="tooltip">Click here to view more information.</div>
 
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js" integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
 
+            <script>  
+                var dataSource = {
+                    datasets:[
+                        {
+                            data: [],
+                            backgroundColor: [
+                                '#ffcd56',
+                                '#ff6384',
+                                '#36a2eb',
+                                '#fd6b19',
+                                '#00ff00',
+                                '#0000ff',
+                                '#ff0000'
+                                
+                                
+                            ],
+                        }
+                    ],
+                    labels:  []
+                };
+                
+                console.log("Data source created");
+                console.log(dataSource);
+
+                function createChart() {
+
+                    var ctx = document.getElementById("myChart").getContext("2d");
+
+                    if (window.myPieChart) {
+                        window.myPieChart.destroy(); // Destroy the previous chart
+                    }  
+
+
+                    window.myPieChart = new Chart(ctx,  {
+                        type:'pie',
+                        data:dataSource,
+                        options: {
+                responsive: false, // Disable responsiveness
+                maintainAspectRatio: false, // Disable aspect ratio 
+                        },
+                    });
+                }
+
+                function getBudget()  {
+                    axios.get('/budget')
+                    .then(function(res) {
+                        console.log(res.data);
+                        for (var i=0;i<res.data.myBudget.length; i++)
+                        {
+                            dataSource.datasets[0].data[i]=res.data.myBudget[i].budget;
+                            dataSource.labels[i]=res.data.myBudget[i].title;
+                        } 
+                    })
+                        .then(function () {
+                        createChart();
+                    });
+                }
+                getBudget();
+                
+            
+            </script>
+
+
+
+</body>
 </html>
