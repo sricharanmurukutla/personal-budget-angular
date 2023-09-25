@@ -1,0 +1,30 @@
+ [
+      {
+        "title": "Rent",
+        "budget": 275
+      },
+      {
+        "title": "Eat Out",
+        "budget": 25
+      },
+      {
+        "title": "Grocery",
+        "budget": 110
+      },
+      {
+        "title": "Healthcare",
+        "budget": 100
+      },
+      {
+        "title": "Travel",
+        "budget": 40
+      },
+      {
+        "title": "Gas",
+        "budget": 80
+      },
+      {
+        "title": "Pet Expenses",
+        "budget": 70
+      }
+    ]
