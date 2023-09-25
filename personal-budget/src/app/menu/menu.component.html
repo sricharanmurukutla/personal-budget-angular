@@ -1,0 +1,23 @@
+<nav class="menu" role="navigation">
+  <!--This is Semantic Change-1-->
+  <ul>
+    <!-- This is A11y Change1 -->
+
+
+    <li><a [routerLink]="['/']" tabindex="2">Homepage</a></li>
+
+    <li><a [routerLink]="['/about']" tabindex="3">About</a></li>
+
+    <li><a [routerLink]="['/login']" tabindex="4">Login</a></li>
+    <li>
+      <a [routerLink]="['https://google.com']" tabindex="5" target="blank">Google</a>
+    </li>
+
+    <li>
+      <a [routerLink]="['/contact']" tabindex="6" target="blank">contact</a>
+    </li>
+
+
+
+  </ul>
+</nav>
